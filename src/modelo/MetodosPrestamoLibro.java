@@ -25,12 +25,12 @@ public class MetodosPrestamoLibro {
         arrayPrestamos.add(temporal);
     }
     
-    public boolean consultarPrestamo(String cedula) {
+    public boolean consultarPrestamo(String numeroPrestamo) {
         boolean existe=false;
         
         for(int contador=0; contador<arrayPrestamos.size(); contador++) {
             
-            if(arrayPrestamos.get(contador).getCedulaUsuario().equals(cedula)) {
+            if(arrayPrestamos.get(contador).getCedulaUsuario().equals(numeroPrestamo)) {
                 
                 arregloInformacionColsultada[0]=arrayPrestamos.get(contador).getNombreUsuario();
                 arregloInformacionColsultada[1]=arrayPrestamos.get(contador).getCedulaUsuario();
@@ -61,6 +61,10 @@ public class MetodosPrestamoLibro {
                 arrayPrestamos.remove(contador);
             }
         }
+    }
+    
+    public String[] getArregloInformacion() {
+        return arregloInformacionColsultada;
     }
     
 }

@@ -6,6 +6,7 @@
 package vista;
 
 import controlador.Controlador_FRM_MantenimientoPrestamoLibros;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -24,6 +25,41 @@ public class FRM_MantenimientoPrestamoLibros extends javax.swing.JFrame {
         this.setLocation(500,200);
         controlador_FRM_MantenimientoPrestamoLibros= new Controlador_FRM_MantenimientoPrestamoLibros(this);
         this.panel_Botones1.agregarEventos(controlador_FRM_MantenimientoPrestamoLibros);
+    }
+    
+    public void mostrarMensaje(String mensaje) {
+        JOptionPane.showMessageDialog(null, mensaje);
+    }
+    
+    public void mostrarInformacion(String arreglo[]) {
+        this.panel_Informacion1.mostrarInformacion(arreglo);
+    }
+    
+    public String[] devolverInformacion() {
+        return this.panel_Informacion1.devolverInformacion();
+    }
+    
+    public void resetearGUI() {
+        this.panel_Informacion1.limpiarCampos();
+        this.panel_Botones1.deshabilitarAgregar();
+        this.panel_Botones1.habilitarAgregar();
+    }
+    
+    public String devolverNumeroPrestamo() {
+        return this.panel_Informacion1.devolverNumeroPrestamo();
+    }
+    
+    public void habilitarAgregar() {
+        this.panel_Informacion1.deshabilitarCampoNumeroPrestamo();
+        this.panel_Informacion1.habilitarCampos();
+        this.panel_Botones1.habilitarAgregar();
+        this.panel_Botones1.deshabilitarBuscar();
+    }
+    
+    public void habilitarEdicion() {
+        this.panel_Informacion1.deshabilitarCampoNumeroPrestamo();
+        this.panel_Informacion1.habilitarCampos();
+        this.panel_Botones1.habilitarEdicion();
     }
 
     /**

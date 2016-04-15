@@ -28,7 +28,26 @@ public class Controlador_FRM_MantenimientoPrestamoLibros implements ActionListen
     public void actionPerformed(ActionEvent e) {
         if(e.getActionCommand().equals("Buscar")) {
             
-            System.out.println("Buscar");
+            buscar();
+        }
+        if(e.getActionCommand().equals("Agregar")) {
+            
+            metodosPrestamoLibro.agregarPrestamo(frm_MantenimientoPrestamoLibros.devolverInformacion());
+            frm_MantenimientoPrestamoLibros.mostrarMensaje("El préstamo del libro ha sido agregado corectamente");
+            frm_MantenimientoPrestamoLibros.resetearGUI();
+        }
+    }
+    
+    public void buscar() {
+        
+        if(metodosPrestamoLibro.consultarPrestamo(frm_MantenimientoPrestamoLibros.devolverNumeroPrestamo())) {
+            frm_MantenimientoPrestamoLibros.mostrarMensaje("El Número de Préstamo se encuentra registrado");
+            frm_MantenimientoPrestamoLibros.mostrarInformacion(metodosPrestamoLibro.getArregloInformacion());
+            frm_MantenimientoPrestamoLibros.habilitarEdicion();
+        }
+        else {
+            frm_MantenimientoPrestamoLibros.mostrarMensaje("El Número de Préstamo no se encuentra registrado");
+            frm_MantenimientoPrestamoLibros.habilitarAgregar();
         }
     }
 }

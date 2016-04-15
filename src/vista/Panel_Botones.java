@@ -18,6 +18,9 @@ public class Panel_Botones extends javax.swing.JPanel {
      */
     public Panel_Botones() {
         initComponents();
+        this.btn_Agregar.setEnabled(false);
+        this.btn_Modificar.setEnabled(false);
+        this.btn_Eliminar.setEnabled(false);
     }
     
     public void agregarEventos(Controlador_FRM_MantenimientoPrestamoLibros controlador) {
@@ -25,6 +28,27 @@ public class Panel_Botones extends javax.swing.JPanel {
         this.btn_Agregar.addActionListener(controlador);
         this.btn_Modificar.addActionListener(controlador);
         this.btn_Eliminar.addActionListener(controlador);
+    }
+    
+    public void habilitarAgregar() {
+        this.btn_Agregar.setEnabled(true);
+    }
+    
+    public void deshabilitarAgregar() {
+        this.btn_Agregar.setEnabled(false);
+    }
+    
+    public void habilitarBuscar() {
+        this.btn_Buscar.setEnabled(true);
+    }
+    
+    public void deshabilitarBuscar() {
+        this.btn_Buscar.setEnabled(false);
+    }
+    
+    public void habilitarEdicion() {
+        this.btn_Modificar.setEnabled(true);
+        this.btn_Eliminar.setEnabled(true);
     }
 
     /**

@@ -16,8 +16,59 @@ public class Panel_Informacion extends javax.swing.JPanel {
      */
     public Panel_Informacion() {
         initComponents();
+        deshabilitarCampos();
     }
-
+    
+    public void mostrarInformacion(String arreglo[]) {
+        this.jt_NumeroPrestamo.setText(arreglo[0]);
+        this.jt_NombreUsuario.setText(arreglo[1]);
+        this.jt_CedulaUsuario.setText(arreglo[2]);
+        this.jt_IsbnLibro.setText(arreglo[3]);
+    }
+    
+    public String[] devolverInformacion() {
+        String arreglo[]= new String [4];
+        
+        arreglo[0]=this.jt_NumeroPrestamo.getText();
+        arreglo[1]=this.jt_NombreUsuario.getText();
+        arreglo[2]=this.jt_CedulaUsuario.getText();
+        arreglo[3]=this.jt_IsbnLibro.getText();
+        
+        return arreglo;
+    }
+    
+    public void limpiarCampos() {
+        this.jt_NumeroPrestamo.setText("");
+        this.jt_NombreUsuario.setText("");
+        this.jt_CedulaUsuario.setText("");
+        this.jt_IsbnLibro.setText("");
+        habilitarCampoNumeroPrestamo();
+        deshabilitarCampos();
+    }
+    
+    public String devolverNumeroPrestamo() {
+        return this.jl_NumeroPrestamo.getText();
+    }
+    
+    public void habilitarCampoNumeroPrestamo() {
+        this.jt_NumeroPrestamo.setEnabled(true);
+    }
+    
+    public void deshabilitarCampoNumeroPrestamo() {
+        this.jt_NumeroPrestamo.setEnabled(false);
+    }
+    
+    public void habilitarCampos() {
+        this.jt_NombreUsuario.setEnabled(true);
+        this.jt_CedulaUsuario.setEnabled(true);
+        this.jt_IsbnLibro.setEnabled(true);
+    }
+    
+    public void deshabilitarCampos() {
+        this.jt_NombreUsuario.setEnabled(false);
+        this.jt_CedulaUsuario.setEnabled(false);
+        this.jt_IsbnLibro.setEnabled(false);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
