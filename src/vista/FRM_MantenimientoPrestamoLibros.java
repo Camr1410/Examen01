@@ -41,8 +41,9 @@ public class FRM_MantenimientoPrestamoLibros extends javax.swing.JFrame {
     
     public void resetearGUI() {
         this.panel_Informacion1.limpiarCampos();
+        this.panel_Botones1.habilitarBuscar();
         this.panel_Botones1.deshabilitarAgregar();
-        this.panel_Botones1.habilitarAgregar();
+        this.panel_Botones1.deshabilitarEdicion();
     }
     
     public String devolverNumeroPrestamo() {
@@ -59,6 +60,7 @@ public class FRM_MantenimientoPrestamoLibros extends javax.swing.JFrame {
     public void habilitarEdicion() {
         this.panel_Informacion1.deshabilitarCampoNumeroPrestamo();
         this.panel_Informacion1.habilitarCampos();
+        this.panel_Botones1.deshabilitarBuscar();
         this.panel_Botones1.habilitarEdicion();
     }
 

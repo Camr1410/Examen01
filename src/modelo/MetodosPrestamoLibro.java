@@ -30,7 +30,7 @@ public class MetodosPrestamoLibro {
         
         for(int contador=0; contador<arrayPrestamos.size(); contador++) {
             
-            if(arrayPrestamos.get(contador).getCedulaUsuario().equals(numeroPrestamo)) {
+            if(arrayPrestamos.get(contador).getNumeroPrestamo().equals(numeroPrestamo)) {
                 
                 arregloInformacionColsultada[0]=arrayPrestamos.get(contador).getNombreUsuario();
                 arregloInformacionColsultada[1]=arrayPrestamos.get(contador).getCedulaUsuario();
@@ -44,7 +44,7 @@ public class MetodosPrestamoLibro {
     public void modificarPrestamo(String arreglo[]) {
         for(int contador=0; contador<arrayPrestamos.size(); contador++) {
             
-            if(arrayPrestamos.get(contador).getCedulaUsuario().equals(arreglo[0])) {
+            if(arrayPrestamos.get(contador).getNumeroPrestamo().equals(arreglo[0])) {
                 
                 arrayPrestamos.get(contador).setNombreUsuario(arreglo[1]);
                 arrayPrestamos.get(contador).setCedulaUsuario(arreglo[2]);
@@ -56,7 +56,7 @@ public class MetodosPrestamoLibro {
     public void eliminarPrestamo(String arreglo[]) {
         for(int contador=0; contador<arrayPrestamos.size(); contador++) {
             
-            if(arrayPrestamos.get(contador).getCedulaUsuario().equals(arreglo[0])) {
+            if(arrayPrestamos.get(contador).getNumeroPrestamo().equals(arreglo[0])) {
                 
                 arrayPrestamos.remove(contador);
             }

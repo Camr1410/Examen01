@@ -20,10 +20,9 @@ public class Panel_Informacion extends javax.swing.JPanel {
     }
     
     public void mostrarInformacion(String arreglo[]) {
-        this.jt_NumeroPrestamo.setText(arreglo[0]);
-        this.jt_NombreUsuario.setText(arreglo[1]);
-        this.jt_CedulaUsuario.setText(arreglo[2]);
-        this.jt_IsbnLibro.setText(arreglo[3]);
+        this.jt_NombreUsuario.setText(arreglo[0]);
+        this.jt_CedulaUsuario.setText(arreglo[1]);
+        this.jt_IsbnLibro.setText(arreglo[2]);
     }
     
     public String[] devolverInformacion() {
@@ -47,7 +46,7 @@ public class Panel_Informacion extends javax.swing.JPanel {
     }
     
     public String devolverNumeroPrestamo() {
-        return this.jl_NumeroPrestamo.getText();
+        return this.jt_NumeroPrestamo.getText();
     }
     
     public void habilitarCampoNumeroPrestamo() {

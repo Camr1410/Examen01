@@ -50,6 +50,11 @@ public class Panel_Botones extends javax.swing.JPanel {
         this.btn_Modificar.setEnabled(true);
         this.btn_Eliminar.setEnabled(true);
     }
+    
+    public void deshabilitarEdicion() {
+        this.btn_Modificar.setEnabled(false);
+        this.btn_Eliminar.setEnabled(false);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

@@ -36,6 +36,18 @@ public class Controlador_FRM_MantenimientoPrestamoLibros implements ActionListen
             frm_MantenimientoPrestamoLibros.mostrarMensaje("El préstamo del libro ha sido agregado corectamente");
             frm_MantenimientoPrestamoLibros.resetearGUI();
         }
+        if(e.getActionCommand().equals("Modificar")) {
+            
+            metodosPrestamoLibro.modificarPrestamo(frm_MantenimientoPrestamoLibros.devolverInformacion());
+            frm_MantenimientoPrestamoLibros.mostrarMensaje("El préstamo del libro ha sido modificado corectamente");
+            frm_MantenimientoPrestamoLibros.resetearGUI();
+        }
+        if(e.getActionCommand().equals("Eliminar")) {
+            
+            metodosPrestamoLibro.eliminarPrestamo(frm_MantenimientoPrestamoLibros.devolverInformacion());
+            frm_MantenimientoPrestamoLibros.mostrarMensaje("El préstamo del libro ha sido eliminado corectamente");
+            frm_MantenimientoPrestamoLibros.resetearGUI();
+        }
     }
     
     public void buscar() {
