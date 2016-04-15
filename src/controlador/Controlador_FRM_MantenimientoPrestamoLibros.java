@@ -23,6 +23,7 @@ public class Controlador_FRM_MantenimientoPrestamoLibros implements ActionListen
     public Controlador_FRM_MantenimientoPrestamoLibros(FRM_MantenimientoPrestamoLibros frm_MantenimientoPrestamoLibros) {
         this.frm_MantenimientoPrestamoLibros=frm_MantenimientoPrestamoLibros;
         metodosPrestamoLibro= new MetodosPrestamoLibro();
+        frm_MantenimientoPrestamoLibros.colocarNumeroPrestamo(metodosPrestamoLibro.devolverNumeroPrestamo());
     }
 
     public void actionPerformed(ActionEvent e) {
@@ -35,18 +36,21 @@ public class Controlador_FRM_MantenimientoPrestamoLibros implements ActionListen
             metodosPrestamoLibro.agregarPrestamo(frm_MantenimientoPrestamoLibros.devolverInformacion());
             frm_MantenimientoPrestamoLibros.mostrarMensaje("El préstamo del libro ha sido agregado corectamente");
             frm_MantenimientoPrestamoLibros.resetearGUI();
+            frm_MantenimientoPrestamoLibros.colocarNumeroPrestamo(metodosPrestamoLibro.devolverNumeroPrestamo());
         }
         if(e.getActionCommand().equals("Modificar")) {
             
             metodosPrestamoLibro.modificarPrestamo(frm_MantenimientoPrestamoLibros.devolverInformacion());
             frm_MantenimientoPrestamoLibros.mostrarMensaje("El préstamo del libro ha sido modificado corectamente");
             frm_MantenimientoPrestamoLibros.resetearGUI();
+            frm_MantenimientoPrestamoLibros.colocarNumeroPrestamo(metodosPrestamoLibro.devolverNumeroPrestamo());
         }
         if(e.getActionCommand().equals("Eliminar")) {
             
             metodosPrestamoLibro.eliminarPrestamo(frm_MantenimientoPrestamoLibros.devolverInformacion());
             frm_MantenimientoPrestamoLibros.mostrarMensaje("El préstamo del libro ha sido eliminado corectamente");
             frm_MantenimientoPrestamoLibros.resetearGUI();
+            frm_MantenimientoPrestamoLibros.colocarNumeroPrestamo(metodosPrestamoLibro.devolverNumeroPrestamo());
         }
     }
     

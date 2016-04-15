@@ -66,5 +66,21 @@ public class MetodosPrestamoLibro {
     public String[] getArregloInformacion() {
         return arregloInformacionColsultada;
     }
-    
+        
+    public String devolverNumeroPrestamo()
+    {
+        String numeroPrestamo= "000";
+        
+        if(arrayPrestamos.size()==0) {
+            numeroPrestamo+=1;
+        }
+        else  {
+            int numero=Integer.parseInt(arrayPrestamos.get(arrayPrestamos.size()-1).getNumeroPrestamo());
+            numero++;
+            numeroPrestamo="0000"+numero;
+        }
+        numeroPrestamo=numeroPrestamo.substring(numeroPrestamo.length()-4, numeroPrestamo.length());
+        
+        return numeroPrestamo;
+    }
 }

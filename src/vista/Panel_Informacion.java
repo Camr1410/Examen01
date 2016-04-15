@@ -5,18 +5,28 @@
  */
 package vista;
 
+import controlador.Controlador_FRM_MantenimientoPrestamoLibros;
+
 /**
  *
  * @author Carlos
  */
 public class Panel_Informacion extends javax.swing.JPanel {
-
-    /**
-     * Creates new form Panel_Informacion
-     */
+    
+    Controlador_FRM_MantenimientoPrestamoLibros controlador;
+            
     public Panel_Informacion() {
         initComponents();
         deshabilitarCampos();
+    }
+    
+    public void agregarEventos(Controlador_FRM_MantenimientoPrestamoLibros controlador) {
+        
+        this.controlador=controlador;
+    }
+    
+    public void colocarNumeroPrestamo(String numeroPrestamo) {
+        this.jt_NumeroPrestamo.setText(numeroPrestamo);
     }
     
     public void mostrarInformacion(String arreglo[]) {
@@ -94,6 +104,12 @@ public class Panel_Informacion extends javax.swing.JPanel {
 
         jl_IsbnLibro.setText("ISBN del Libro");
 
+        jt_NumeroPrestamo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jt_NumeroPrestamoKeyPressed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -141,6 +157,14 @@ public class Panel_Informacion extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jt_NumeroPrestamoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jt_NumeroPrestamoKeyPressed
+        
+      if(evt.getKeyCode()==10)
+        {
+            this.controlador.buscar();
+        }  
+    }//GEN-LAST:event_jt_NumeroPrestamoKeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

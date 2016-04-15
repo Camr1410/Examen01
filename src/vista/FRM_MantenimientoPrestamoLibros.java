@@ -24,7 +24,12 @@ public class FRM_MantenimientoPrestamoLibros extends javax.swing.JFrame {
         initComponents();
         this.setLocation(500,200);
         controlador_FRM_MantenimientoPrestamoLibros= new Controlador_FRM_MantenimientoPrestamoLibros(this);
+        this.panel_Informacion1.agregarEventos(controlador_FRM_MantenimientoPrestamoLibros);
         this.panel_Botones1.agregarEventos(controlador_FRM_MantenimientoPrestamoLibros);
+    }
+    
+    public void colocarNumeroPrestamo(String numeroPrestamo) {
+        this.panel_Informacion1.colocarNumeroPrestamo(numeroPrestamo);
     }
     
     public void mostrarMensaje(String mensaje) {
